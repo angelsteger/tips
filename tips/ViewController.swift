@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var threeLabel: UILabel!
     @IBOutlet weak var fourLabel: UILabel!
     @IBOutlet weak var fiveLabel: UILabel!
+    @IBOutlet weak var totalText: UILabel!
+    @IBOutlet weak var tipText: UILabel!
+    @IBOutlet weak var divider: UIView!
+    @IBOutlet var stuff: [UIView]!
+
+    var isEmpty = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +64,32 @@ class ViewController: UIViewController {
         threeLabel.text = String(format: "$%.2f", three)
         fourLabel.text = String(format: "$%.2f", four)
         fiveLabel.text = String(format: "$%.2f", five)
+        
+        //billHolder[0].frame = CGRect(x:0, y:114, width:320, height:58)
+        var wasEmpty = isEmpty
+        isEmpty = billField.text.isEmpty
+        
+        if (wasEmpty && isEmpty == false) {
+            UIView.animateWithDuration(0.35, animations: {
+                self.billField.frame.offset(dx: 0, dy: 114 - 255)
+            }, completion: {(value: Bool) in
+                UIView.animateWithDuration(0.25, animations: {
+                    for item in self.stuff {
+                        item.alpha = 1.0
+                    }
+                })
+            })
+        } else if (wasEmpty == false && isEmpty){
+            UIView.animateWithDuration(0.25, animations: {
+                for item in self.stuff {
+                    item.alpha = 0
+                }
+            }, completion: {(value: Bool) in
+                UIView.animateWithDuration(0.25, animations: {
+                    self.billField.frame.offset(dx: 0, dy: -(114 - 255))
+                })
+            })
+        }
     }
 
     @IBAction func onTap(sender: AnyObject) {
