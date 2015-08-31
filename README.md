@@ -3,6 +3,7 @@ Codepath Swift Course Application
 
 Q: How many hours did it take to complete? 
 A: Approx 6-8 (corrupted my file and remade it again)
+UPDATE: more like 12 counting animation and launch screens
 
 Q: Which required and optional stories have you completed?
 A: 
@@ -12,9 +13,10 @@ A:
 -Added custom text styles and colored background elements
 -Added the ability to divide the total bill amongst up to 5 people
 
-Notes:
--I'd like to do more with animation and wasn't able to get the launch screen to work properly, but might submit those later.
+UPDATE: Now added screencaps of several iterations
 
+![alt tag](https://raw.githubusercontent.com/angelsteger/tips/master/screencapture2.gif)
+![alt tag](https://raw.githubusercontent.com/angelsteger/tips/master/screencapture1.gif)
 ![alt tag](https://raw.githubusercontent.com/angelsteger/tips/master/screencapture.gif)
 
 Walkthrough created with LiceCap
